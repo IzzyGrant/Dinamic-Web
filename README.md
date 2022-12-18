@@ -44,7 +44,7 @@ Esta pagina cuenta con 3 archivos por separado los cuales tienen una funcion ind
 
 # index.html
 
-Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un <div> .
+Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un < div > .
 
 ```html
 <!DOCTYPE html>
