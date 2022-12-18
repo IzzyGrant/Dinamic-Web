@@ -44,7 +44,7 @@ Esta pagina cuenta con 3 archivos por separado los cuales tienen una funcion ind
 
 # index.html
 
-Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un *<div>*.
+Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un <div> .
 
 ```html
 <!DOCTYPE html>
@@ -100,4 +100,27 @@ text-align: center;
     margin: 2px 10px 2px 10px;
     color: #f00;
 }
+```
+Por ejemplo:
+
+> <h6 class="centro simbolo">+</h6>
+
+Vease que la etiqueta *h6* tiene la clase *simbolo y centro* separados por un espacio. Esto quiere decir que se aplicaran ambos bloques de estilo en ese elemento de html. si se elimina la clase *simbolo* solo se centrara sin modificar el tamaño y color como lo especifica la clase *.simbolo*
+
+
+# script.js
+
+En este archivo añadiremos la programacion javascript que nos permitira dar interactividad a una pagina web. En este caso es evaluar 2 numeros y sumarlos y mostrar el resultado:
+
+```js
+function operar() {
+    var resultado = 0;
+    var numero1 = document.getElementById("num1").value;
+    numero1 = parseInt(numero1);
+    var numero2 = document.getElementById("num2").value;
+    numero2 = parseInt(numero2);
+    resultado = numero1 + numero2;
+    console.log("El resultado de la operacion "+ numero1 + " y " + numero2 +" es: " + resultado);
+    document.getElementById("resultado").innerHTML = resultado;
+} 
 ```
