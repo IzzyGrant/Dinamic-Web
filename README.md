@@ -1,4 +1,4 @@
-# Dinamic-Web
+# Dinamic-Web ✔
 ## _Interactividad entre HTML-CSS y JavaScript_
 
 
@@ -169,3 +169,19 @@ document.getElementById("resultado").innerHTML = resultado;
 ```
 
 Por ultimo, esta linea busca el elemento identificado por el id "resultado" y lo reemplaza por el valor obtenido de la variable resultado de javascript el cual fue operado anteriormente...
+
+# Como se ha llamado la funcion de javascript a HTML?
+
+Mediante el boton en HTML se tiene definida la funcion con el metodo *onclick* el cual tiene el nombre y los argumentos(en este caso ninguno) de la funcion que se quiere utilizar, esto en el archivo index.html:
+
+```html
+  <input type="button" value="Sumar" onclick="operar()">
+```
+
+# Pagina 
+
+Aqui esta el enlace a la pagina de esta breve explicacion funcional para probar : 
+
+> https://izzygrant.github.io/Dinamic-Web/
+
+Happy Xmas 🎇 🎄
