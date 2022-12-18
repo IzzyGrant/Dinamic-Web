@@ -44,7 +44,7 @@ Esta pagina cuenta con 3 archivos por separado los cuales tienen una funcion ind
 
 # index.html
 
-Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un < div > .
+Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un <div> .
 
 ```html
 <!DOCTYPE html>
@@ -79,13 +79,13 @@ Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que n
 ```
 
 Vease que tenemos 2 *inputs numericos con id diferentes*. Estos tendran que ser definidos desde aqui para que cuando usemos Javascript sepamos de donde jalar los valores e identificarlos. Tambien tenemos un *<div>* con el id "resultado". Cuando operemos los 2 valores que esten dentro de los *inputs* reemplazaremos la suma de los 2 valores por el mensaje "Resultado Aqui!".
-
-> <script src="script.js" type="text/javascript"></script>
-
+```html
+ <script src="script.js" type="text/javascript"></script>
+```
 Esta linea que esta en la parte superior dentro de *head* nos dice que tiene una dependencia de archivo. esto quiere decir que al cargar la pagina tambien buscara un archivo con el nombre "script.js" y lo cargara como archivo .js. En este caso el archivo se encuentra en la raiz junto con el resto. Tambien se puede colocar dentro de una carpeta: 
-
-> <script src="carpeta/script.js" type="text/javascript"></script>
-
+```html
+ <script src="carpeta/script.js" type="text/javascript"></script>
+```
 # style.css
 
 Esta es la hoja de estilos. Este archivo se reduce a centrar el texto de la pagina y dar color y tamaño a los simbolos matematicos mediante clases:
@@ -103,7 +103,9 @@ text-align: center;
 ```
 Por ejemplo:
 
-> <h6 class="centro simbolo">+</h6>
+```html
+ <h6 class="centro simbolo">+</h6>
+```
 
 Vease que la etiqueta *h6* tiene la clase *simbolo y centro* separados por un espacio. Esto quiere decir que se aplicaran ambos bloques de estilo en ese elemento de html. si se elimina la clase *simbolo* solo se centrara sin modificar el tamaño y color como lo especifica la clase *.simbolo*
 
@@ -124,3 +126,46 @@ function operar() {
     document.getElementById("resultado").innerHTML = resultado;
 } 
 ```
+
+Por partes...
+
+```js
+function operar() {}
+```
+Aqui se almacenara toda la funcion de operar los valores. por lo tanto al presionar el boton "sumar" con el metodo "onclick" de html, la funcion sera llamada
+
+```js
+var resultado = 0;
+```
+Declaramos la variable en donde se almacenara el resultado de la operacion.
+```js
+var numero1 = document.getElementById("num1").value;
+```
+la variable *numero1* tomara el valor del elemento identificado por el id "num1" tomando explicitamente el atributo "value" del input en html. por defecto este valor se declaro como "0": _<input type="number" name="num1" id="num1" value="0">_
+
+Cuando el usuario introduce un valor, el atributo modificado es "value".
+
+Esto mismo se aplicara para *numero2*.
+
+```js
+numero1 = parseInt(numero1);
+```
+Aqui nos aseguramos de transformar el valor obtenido en un valor numerico transformando el tipo de dato a numero entero. Esto es muy importante ya que de no hacerlo tendriamos algo como: 2 + 4 = 24 cuando debera operarse 2 + 4 = 6.
+
+Esto mismo se aplicara para *numero2*.
+
+```js
+resultado = numero1 + numero2;
+```
+Ahora si hacemos la operacion con los elementos dados y corregidos.
+
+```js
+console.log("El resultado de la operacion "+ numero1 + " y " + numero2 +" es: " + resultado);
+```
+Esto es algo que no aparecera a simple vista. Aqui estamos mandando un mensaje de consola que nos mostrara la operacion y su resultado. Esto dependera del navegador utilizado. Puede encontrarse haciendo click derecho en la pagina y seleccionar "Inspeccionar" e ir a consola en donde aparecera este mensaje.
+
+```js
+document.getElementById("resultado").innerHTML = resultado;
+```
+
+Por ultimo, esta linea busca el elemento identificado por el id "resultado" y lo reemplaza por el valor obtenido de la variable resultado de javascript el cual fue operado anteriormente...
