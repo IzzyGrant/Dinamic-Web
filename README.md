@@ -29,5 +29,5 @@ En este caso se elaborara una pagina que sume 2 valores enteros indicados por el
 
 Mediante esta estructura de pagina:
 
-https://github.com/IzzyGrant/Dinamic-Web/blob/main/page.png?raw=true
+
 ![alt text](https://github.com/IzzyGrant/Dinamic-Web/blob/main/page.png?raw=true)
