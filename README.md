@@ -31,3 +31,73 @@ Mediante esta estructura de pagina:
 
 
 ![alt text](https://github.com/IzzyGrant/Dinamic-Web/blob/main/page.png?raw=true)
+
+# Estructuración
+
+Esta pagina cuenta con 3 archivos por separado los cuales tienen una funcion independiente:
+
+| Archivo | Función |
+| ------ | ------ |
+| *Index.html* | Contiene el lenguaje de etiquetado de la pagina. Define la estructura de esta. |
+| *style.css* | Contiene el lenguaje de estilo de la pagina. Define la estetica de esta. |
+| *script.js* | Contiene el lenguaje de programacion de la pagina. Se ejecutan funciones desde este. |
+
+# index.html
+
+Realizado bajo *Visual Studio Code*, requerimos de una estructura sencilla que nos permita introducir 2 valores numericos y un boton para emitir la funcion. deberemos usar tambien un sitio donde se imprimira el resultado. En este caso un *<div>*.
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+    <title>HTML/CSS/Javascript</title>
+</head>
+<body>
+
+    <h1 class="centro">Uso de operadores mediante Javascript.</h1>
+    <h5 class="centro">Operador de 2 valores mediante variables:</h5>
+    <p class="centro">Ingresa 2 numeros para operar y posteriormente el boton "sumar".</p>
+    <hr>
+    <div class="centro">
+        <input type="number" name="num1" id="num1" value="0"> 
+        <h6 class="centro simbolo">+</h6>
+        <input type="number" name="num2" id="num2" value="0">
+        <h6 class="centro simbolo">=</h6>
+        <br>
+        <input type="button" value="Sumar" onclick="operar()">
+        <hr>
+        <div id="resultado">Resultado Aqui!</div>
+    </div>
+
+</body>
+</html>
+```
+
+Vease que tenemos 2 *inputs numericos con id diferentes*. Estos tendran que ser definidos desde aqui para que cuando usemos Javascript sepamos de donde jalar los valores e identificarlos. Tambien tenemos un *<div>* con el id "resultado". Cuando operemos los 2 valores que esten dentro de los *inputs* reemplazaremos la suma de los 2 valores por el mensaje "Resultado Aqui!".
+
+> <script src="script.js" type="text/javascript"></script>
+
+Esta linea que esta en la parte superior dentro de *head* nos dice que tiene una dependencia de archivo. esto quiere decir que al cargar la pagina tambien buscara un archivo con el nombre "script.js" y lo cargara como archivo .js. En este caso el archivo se encuentra en la raiz junto con el resto. Tambien se puede colocar dentro de una carpeta: 
+
+> <script src="carpeta/script.js" type="text/javascript"></script>
+
+# style.css
+
+Esta es la hoja de estilos. Este archivo se reduce a centrar el texto de la pagina y dar color y tamaño a los simbolos matematicos mediante clases:
+
+```css
+.centro{
+text-align: center;
+}
+
+.simbolo{
+    font-size: 32px; 
+    margin: 2px 10px 2px 10px;
+    color: #f00;
+}
+```
